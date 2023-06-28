@@ -1,7 +1,7 @@
 html {
   height: 100%;
   width: 100%;
-  font-family: 'Courier New', Courier, monospace;
+  font-family: "Courier New", Courier, monospace;
   font-weight: bold;
 }
 
@@ -18,7 +18,7 @@ button {
   background-color: #ffffff;
   color: black;
   border: 2px solid white;
-  font-family: 'Courier New', Courier, monospace;
+  font-family: "Courier New", Courier, monospace;
   font-weight: bold;
   border-radius: 20%;
   transition-duration: 0.5s;
