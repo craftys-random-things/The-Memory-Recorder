@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-width=1">
+  <title>The Memory Recorder</title>
+  <style>
+    body {
+      background-color: #393939;
+    }
+  </style>
+  <link href="main/style.css" rel="stylesheet" type="text/css">
+</head>
+
+<body class="grey">
+  <h1 id="box1" class="box center"> </h1>
+  <button class="hidden center" id="lvl001" type="button">001</button>
+  <button id="lvl002" type="button" class="disabled hidden center"></button>
+  <script src="main/common.js"></script>
+  <script>
+    window.addEventListener("load", function () {
+      async function runTyping() {
+        const container1 = document.getElementById("box1");
+        await typewriter("<< PICK A MEMORY.", container1, 100);
+        await document.getElementById("lvl001").addEventListener("click", function () {
+          switchPages("warning.html");
+        });
+        await show(document.getElementById("lvl001"));
+        await show(document.getElementById("lvl002"));
+      }
+      runTyping();
+    })
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,112 @@
+html {
+  height: 100%;
+  width: 100%;
+  font-family: 'Courier New', Courier, monospace;
+  font-weight: bold;
+}
+
+body {
+  background-color: #000000;
+  color: white;
+}
+
+.grey {
+  background-color: #393939;
+}
+
+button {
+  background-color: #ffffff;
+  color: black;
+  border: 2px solid white;
+  font-family: 'Courier New', Courier, monospace;
+  font-weight: bold;
+  border-radius: 20%;
+  transition-duration: 0.5s;
+  font-size: 150%;
+}
+
+button:hover {
+  background-color: #000000;
+  border: 2px solid #ffffff;
+  color: #ffffff;
+}
+
+img {
+  position: relative;
+  max-width: 100%;
+  height: auto;
+  display: flex;
+  margin: auto;
+  justify-content: center;
+  align-items: center;
+}
+
+#start {
+  position: relative;
+  justify-content: center;
+  align-items: center;
+
+  margin-left: 50%;
+  height: 20%;
+  width: 20%;
+}
+
+.container {
+  height: 300px;
+}
+
+#warning {
+  max-width: 10%;
+  height: auto;
+  margin-top: 5%;
+}
+
+.box {
+  color: #ffffff;
+}
+
+.center {
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+  align-items: center;
+  flex-wrap: wrap;
+  margin: auto;
+  text-align: center;
+}
+
+#back {
+  position: relative;
+  margin: auto;
+  align-items: center;
+  justify-items: center;
+}
+
+#continue {
+  position: relative;
+  margin: auto;
+  align-items: center;
+  justify-items: center;
+}
+
+.hidden {
+  display: none;
+}
+
+.disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.disabled2 {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.disabled::before {
+  content: "002";
+}
+
+.disabled:hover::before {
+  content: "LOCKED";
+}

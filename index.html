@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-width=1">
+  <title>The Memory Recorder</title>
+  <style>
+    body {
+      background-color: #393939;
+    }
+    #boop {
+      visibility: hidden;
+    }
+  </style>
+  <link href="main/style.css" rel="stylesheet" type="text/css" preload>
+</head>
+
+<body class="grey">
+  <div id="boop">
+  <img src="assets/imgs/logo.jpg">
+  <div class="container"><button id="start" type="button">PLAY</button></div></div>
+  <script src="main/common.js"></script>
+  <script>
+    document.getElementById("start").addEventListener("click", function () {switchPages("levelSelect.html");});</script>
+  <noscript>Please turn on JavaScript in your browser to see this project. It'll be worth it (I hope).</noscript>
+  <style>#boop {visibility: visible;}</style>
+</body>
+
+</html>
