@@ -112,25 +112,25 @@
         await show(opt2);
         
         await new Promise(async (resolve) => {
-          await opt1.addEventListener("click", async function () {
+          await opt1.addEventListener("click", async function no2 () {
             await hide(opt1);
             await hide(opt2);
             await clearLines(box1, box2, box3, 1000);
             await playLine(r, 6, box1, 100, 1000);
             await clearLines(box1, box2, box3, 1000);
-            opt1.removeEventListener("click");
-            opt2.removeEventListener("click");
+            opt1.removeEventListener("click", no2);
+            opt2.removeEventListener("click", no3);
             resolve();
           });
         })
 
         await new Promise(async (resolve) => {
-          await opt2.addEventListener("click", async function () {
+          await opt2.addEventListener("click", async function no3() {
             await hide(opt1);
             await hide(opt2);
             await clearLines(box1, box2, box3, 1000);
-            await opt1.removeEventListener("click");
-            await opt2.removeEventListener("click");
+            await opt1.removeEventListener("click", no2);
+            await opt2.removeEventListener("click", no3);
             resolve();
           });
         })
@@ -152,7 +152,7 @@
         await show(opt3);
         
         await new Promise(async (resolve) => {
-          await opt1.addEventListener("click", async function () {
+          await opt1.addEventListener("click", async function no4 () {
             await hide(opt1);
             await hide(opt2);
             await hide(opt3);
@@ -161,15 +161,15 @@
             await typewriter("<< YOU ARE TOO FATIGUED TO SUCESSFULLY TRY THE BREATHING TECHNIQUES (REQUIRES 10 ENERGY).", box1, 100);
             await playLine(d, 3, box2, 50, 1000);
             await clearLines(box1, box2, box3, 1000);
-            await opt1.removeEventListener("click");
-            await opt2.removeEventListener("click");
-            await opt3.removeEventListener("click");
+            await opt1.removeEventListener("click", no4);
+            await opt2.removeEventListener("click", no5);
+            await opt3.removeEventListener("click", no6);
             resolve();
           });
         })
 
         await new Promise(async (resolve) => {
-          await opt2.addEventListener("click", async function () {
+          await opt2.addEventListener("click", async function no5() {
             await hide(opt1);
             await hide(opt2);
             await hide(opt3);
@@ -179,15 +179,15 @@
             await playLine(d, 4, box2, 100, 1000);
             await playLine(r, 9, box2, 100, 1000);
             await clearLines(box1, box2, box3, 1000);
-            await opt1.removeEventListener("click");
-            await opt2.removeEventListener("click");
-            await opt3.removeEventListener("click");
+            await opt1.removeEventListener("click", no4);
+            await opt2.removeEventListener("click", no5);
+            await opt3.removeEventListener("click", no6);
             resolve();
           });
         })
 
         await new Promise(async (resolve) => {
-          await opt3.addEventListener("click", async function () {
+          await opt3.addEventListener("click", async function no6() {
             await hide(opt1);
             await hide(opt2);
             await hide(opt3);
@@ -196,9 +196,9 @@
             await typewriter("<< YOU ARE TOO FATIGUED TO ATTEMPT THE PHYSICAL EXERCISE. (REQUIRES 30 ENERGY).", box1, 100);
             await playLine(d, 5, box2, 100, 1000);
             await clearLines(box1, box2, box3, 1000);
-            await opt1.removeEventListener("click");
-            await opt2.removeEventListener("click");
-            await opt3.removeEventListener("click");
+            await opt1.removeEventListener("click", no4);
+            await opt2.removeEventListener("click", no5);
+            await opt3.removeEventListener("click", no6);
             resolve();
           });
         })
@@ -223,11 +223,11 @@
         await show(opt2);
         
         await new Promise(async (resolve) => {
-          await opt1.addEventListener("click", async function () {
+          await opt1.addEventListener("click", async function no7() {
             await hide(opt1);
             await hide(opt2);
             await clearLines(box1, box2, box3, 1000);
-            await opt1.removeEventListener("click");
+            await opt1.removeEventListener("click", no7);
             resolve();
           });
         })
@@ -265,12 +265,13 @@
         
         await opt2.classList.remove("disabled2");
         await opt1.classList.add("disabled2");
+        
         await new Promise(async (resolve) => {
-          await opt2.addEventListener("click", async function () {
+          await opt2.addEventListener("click", async function no8() {
             await hide(opt1);
             await hide(opt2);
             await clearLines(box1, box2, box3, 1000);
-            await opt2.removeEventListener("click");
+            await opt2.removeEventListener("click",no8);
             resolve();
           });
         })
