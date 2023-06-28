@@ -79,6 +79,10 @@
         await typewriter("<< OPTION 2: STAY SILENT ON THE TOPIC. (0 ENERGY, 0 HAPPINESS)", box3, 50);
 
         await opt1.classList.add("disabled2");
+
+        await show(opt1);
+        await show(opt2);
+        
         await new Promise(async (resolve) => {
           await opt2.addEventListener("click", async function no1 () {
             await hide(opt1);
@@ -88,10 +92,7 @@
             resolve();
           });
         })
-
-        await show(opt1);
-        await show(opt2);
-
+        
         await playLine(r, 4, box1, 100, 2000);
         await playLine(d, 1, box2, 50, 1000);
         await playLine(r, 5, box3, 100, 500);
@@ -107,6 +108,9 @@
 
         await opt1.classList.remove("disabled2");
 
+        await show(opt1);
+        await show(opt2);
+        
         await new Promise(async (resolve) => {
           await opt1.addEventListener("click", async function () {
             await hide(opt1);
@@ -131,9 +135,6 @@
           });
         })
 
-        await show(opt1);
-        await show(opt2);
-
         await typewriter("<< YOU ARE HOME.", box1, 100);
         await playLine(r, 7, box2, 100, 1000);
         await playLine(d, 2, box3, 50, 1000);
@@ -146,6 +147,10 @@
         await typewriter("<< OPTION 2: TRY CREATIVE EXPRESSION. (??? ENERGY, ??? HAPPINESS).", box3, 100);
         await typewriter("<< OPTION 1: TRY PHYSICAL EXERCISE. (??? ENERGY, ??? HAPPINESS).", box4, 100);
 
+        await show(opt1);
+        await show(opt2);
+        await show(opt3);
+        
         await new Promise(async (resolve) => {
           await opt1.addEventListener("click", async function () {
             await hide(opt1);
@@ -213,7 +218,10 @@
         await typewriter("<< OPTION 2: DON'T CHECK THE ROOM AND CHALLENGE YOUR OCD. (-30 ENERGY, -20 HAPPINESS).", box3, 100);
 
         await opt2.classList.add("disabled2");
-
+        
+        await show(opt1);
+        await show(opt2);
+        
         await new Promise(async (resolve) => {
           await opt1.addEventListener("click", async function () {
             await hide(opt1);
@@ -223,10 +231,6 @@
             resolve();
           });
         })
-
-
-        await show(opt1);
-        await show(opt2);
 
         await typewriter("<< YOU GO AND CHECK AND OF COURSE THERE IS... NOTHING", box1, 100);
         await playLine(d, 7, box2, 100, 1000);
@@ -256,6 +260,9 @@
         await typewriter("<< OPTION 1: RESIST AGAINST DEPRESSION. (-50 ENERGY, -10 HAPPINESS).", box2, 100);
         await typewriter("<< OPTION 2: STOP RESISTING. (0 ENERGY, 0 HAPPINESS)", box3, 100);
 
+        await show(opt1);
+        await show(opt2);
+        
         await opt2.classList.remove("disabled2");
         await opt1.classList.add("disabled2");
         await new Promise(async (resolve) => {
@@ -267,9 +274,6 @@
             resolve();
           });
         })
-
-        await show(opt1);
-        await show(opt2);
 
         await typewriter("<< DEPRESSION SLITS YOUR WRISTS. THE LAST THING YOU REMEMBER IS BLEEDING OUT BEFORE BLACKING OUT AND WAKING UP IN THE HOSPITAL.", box1, 100);
         await clearLines(box1, box2, box3);
