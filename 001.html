@@ -95,10 +95,10 @@
         
         await playLine(r, 4, box1, 100, 2000);
         await playLine(d, 1, box2, 50, 1000);
-        await playLine(r, 5, box3, 100, 500);
+        await playLine(o, 1, box1, 100, 2000);
 
         await clearLines(box1, box2, box3, 1000);
-        await playLine(o, 1, box1, 100, 2000);
+        await playLine(r, 5, box3, 100, 500);
         await clearLines(box1, box2, box3, 1000);
 
         //alarm, sirens, countdown from 10 secs to emphasize panic 
@@ -118,8 +118,6 @@
             await clearLines(box1, box2, box3, 1000);
             await playLine(r, 6, box1, 100, 1000);
             await clearLines(box1, box2, box3, 1000);
-            opt1.removeEventListener("click", no2);
-            opt2.removeEventListener("click", no3);
             resolve();
           });
         })
@@ -129,12 +127,13 @@
             await hide(opt1);
             await hide(opt2);
             await clearLines(box1, box2, box3, 1000);
-            await opt1.removeEventListener("click", no2);
-            await opt2.removeEventListener("click", no3);
             resolve();
           });
         })
 
+        await opt1.removeEventListener("click", no2);
+        await opt2.removeEventListener("click", no3);
+        
         await typewriter("<< YOU ARE HOME.", box1, 100);
         await playLine(r, 7, box2, 100, 1000);
         await playLine(d, 2, box3, 50, 1000);
