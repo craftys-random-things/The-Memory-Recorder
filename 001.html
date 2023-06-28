@@ -19,13 +19,13 @@
   <h1 class="center" id="box4"> </h1>
   <h1 class="center" id="box5"> </h1>
   <h1 class="center" id="box6"> </h1>
-  
+
   <button class="hidden center" id="opt1" type="button"> OPTION 1 </button>
   <button class="hidden center" id="opt2" type="button"> OPTION 2 </button>
   <button class="hidden center" id="opt3" type="button"> OPTION 3 </button>
 
   <button id="continue2" class="hidden center" type="button"> CONTINUE </button>
-    
+
   <script src="main/common.js"></script>
   <script>
     window.addEventListener("load", function () {
@@ -40,32 +40,32 @@
         const opt1 = document.getElementById("opt1")
         const opt2 = document.getElementById("opt2")
         const opt3 = document.getElementById("opt3")
-        
+
         const box1 = document.getElementById("box3");
         const box2 = document.getElementById("box4");
         const box3 = document.getElementById("box5");
         const box4 = document.getElementById("box6");
-        
+
         await typewriter("[JUNE 30, 2022]", box1, 100);
         await typewriter("[001: THE VOID OF DEPRESSION]", box2, 100);
         await typewriter("[MEMORY BEGIN]", box3, 100);
         await sleep(3000);
-        
+
         await reverseTypewriter(box3.textContent.length, box3, 100);
         await reverseTypewriter(box2.textContent.length, box2, 100);
         await reverseTypewriter(box1.textContent.length, box1, 100);
         await sleep(1000);
-        
+
         await playSound("assets/audio/sfxs/schoolAlarm.mp3");
         await playLine(f, 1, box1, 50, 500);
         await playLine(r, 1, box2, 50, 500);
         await playLine(f, 2, box3, 50, 1000);
 
         await clearLines(box1, box2, box3, 1000);
-        
+
         await playLine(r, 2, box1, 50, 500);
         await playLine(f, 3, box2, 50, 500);
-      
+
         await clearLines(box1, box2, box3, 5000);
 
         //add traffic noises
@@ -73,22 +73,22 @@
         await playLine(m, 1, box2, 100, 2000);
 
         await clearLines(box1, box2, box3, 1000);
-        
+
         await typewriter("<< PLAYER CHOICES: YOU HAVE 20 ENERGY AND 50 HAPPINESS OUT OF A MAX OF 100 EACH. YOU MAY NOT CHOOSE OPTIONS THAT WOULD REDUCE EITHER VALUE TO BELOW 0. HOW WOULD YOU LIKE TO RESPOND?", box1, 50);
-        await typewriter("<< OPTION 1: TALK TO YOUR MOM ABOUT EVERYTHING. (-50 ENERGY, -50 HAPPINESS", box2, 50);
-        await typewriter("<< OPTION 2: STAY SILENT ON THE TOPIC. (0 ENERGY, 0 ENERGY)", box3, 500); 
+        await typewriter("<< OPTION 1: TALK TO YOUR MOM ABOUT EVERYTHING. (-50 ENERGY, -50 HAPPINESS)", box2, 50);
+        await typewriter("<< OPTION 2: STAY SILENT ON THE TOPIC. (0 ENERGY, 0 HAPPINESS)", box3, 50);
 
         await opt1.classList.add("disabled2");
-           await new Promise ((resolve) => {
-            await opt2.addEventListener("click", async function () {
+        await new Promise(async (resolve) => {
+          await opt2.addEventListener("click", async function no1 () {
             await hide(opt1);
             await hide(opt2);
             await clearLines(box1, box2, box3, 1000)
-            await opt2.removeEventListener("click");
+            await opt2.removeEventListener("click", no1);
             resolve();
           });
         })
-        
+
         await show(opt1);
         await show(opt2);
 
@@ -107,7 +107,7 @@
 
         await opt1.classList.remove("disabled2");
 
-        await new Promise ((resolve) => {
+        await new Promise(async (resolve) => {
           await opt1.addEventListener("click", async function () {
             await hide(opt1);
             await hide(opt2);
@@ -120,7 +120,7 @@
           });
         })
 
-        await new Promise ((resolve) => {
+        await new Promise(async (resolve) => {
           await opt2.addEventListener("click", async function () {
             await hide(opt1);
             await hide(opt2);
@@ -130,7 +130,7 @@
             resolve();
           });
         })
-        
+
         await show(opt1);
         await show(opt2);
 
@@ -146,7 +146,7 @@
         await typewriter("<< OPTION 2: TRY CREATIVE EXPRESSION. (??? ENERGY, ??? HAPPINESS).", box3, 100);
         await typewriter("<< OPTION 1: TRY PHYSICAL EXERCISE. (??? ENERGY, ??? HAPPINESS).", box4, 100);
 
-        await new Promise ((resolve) => {
+        await new Promise(async (resolve) => {
           await opt1.addEventListener("click", async function () {
             await hide(opt1);
             await hide(opt2);
@@ -162,8 +162,8 @@
             resolve();
           });
         })
-        
-        await new Promise ((resolve) => {
+
+        await new Promise(async (resolve) => {
           await opt2.addEventListener("click", async function () {
             await hide(opt1);
             await hide(opt2);
@@ -180,8 +180,8 @@
             resolve();
           });
         })
-        
-        await new Promise ((resolve) => {
+
+        await new Promise(async (resolve) => {
           await opt3.addEventListener("click", async function () {
             await hide(opt1);
             await hide(opt2);
@@ -197,7 +197,7 @@
             resolve();
           });
         })
-        
+
 
         await playLine(r, 10, box1, 100, 1000);
         await playLine(r, 11, box2, 100, 1000);
@@ -214,7 +214,7 @@
 
         await opt2.classList.add("disabled2");
 
-        await new Promise ((resolve) => {
+        await new Promise(async (resolve) => {
           await opt1.addEventListener("click", async function () {
             await hide(opt1);
             await hide(opt2);
@@ -223,7 +223,7 @@
             resolve();
           });
         })
-        
+
 
         await show(opt1);
         await show(opt2);
@@ -258,8 +258,8 @@
 
         await opt2.classList.remove("disabled2");
         await opt1.classList.add("disabled2");
-        await new Promise ((resolve) => {
-            await opt2.addEventListener("click", async function () {
+        await new Promise(async (resolve) => {
+          await opt2.addEventListener("click", async function () {
             await hide(opt1);
             await hide(opt2);
             await clearLines(box1, box2, box3, 1000);
@@ -267,7 +267,7 @@
             resolve();
           });
         })
-        
+
         await show(opt1);
         await show(opt2);
 
@@ -278,10 +278,10 @@
         await sleep(2000);
         await typewriter("As someone who has had a history with OCD and depression, I often see people who do not understand the conditions, which is normal, but if they do not understand the suffering that many people with these disorders go through, it is neigh impossible for them to empathize with individuals who need their support. I frequently see many people saying insensitive things about these mental illnesses and I wanted to create something like a simulation of various commonly misunderstood and stereotyped situations, so people can take the first step towards empathy. If we do not have empathy, it is very easy for people to be oppressed and for society to come crumbling down. Empathy is one of the building blocks of community.", box2, 25);
         await typewriter("OCD, or Obsessive-Compulsive Disorder, is a mental illness in which someone is caught in a cycle of of obsessions and compulsions. Obsessions are unwanted and intrusive thoughts that trigger very distressing feelings, while compulsions are things one does to try to alieve those bad feelings. For more information, visit sites like iocdf.org. Depression, on the other hand, is a serious mental illness that affects one's mood quite negatively. There are many different types of depression, and symptoms for both OCD and depression vary drastically among different people. What I protrayed in this project was in no way the only way people experience these mental illnesses. I encourage you to do your own research and learn more about these topics.", box3, 25);
-      await show(document.getElementById("continue2"));
-      await document.getElementById("continue2").addEventListener("click", function (){
-        switchPages(index.html);
-      })
+        await show(document.getElementById("continue2"));
+        await document.getElementById("continue2").addEventListener("click", function () {
+          switchPages(index.html);
+        })
       } runTyping();
     })
   </script>
